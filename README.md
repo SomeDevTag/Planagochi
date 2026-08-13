@@ -10,6 +10,32 @@ too long it dries out and dies, so it wants you to check in on it now and then.
 Everything you see is drawn as pixels by hand. There are no image files in the game at
 all, apart from the window icon.
 
+## Screenshots
+
+The shop floor. You walk around here, between the pots on the right, the pond and the
+upgrade box on the left, and the customer waiting at the counter.
+
+![The shop floor](screenshots/room.png)
+
+Tending a pot. The bar on the right is how much water is left, and this carrot is ready
+to pull up.
+
+![Growing a carrot](screenshots/growing.png)
+
+A customer placing an order. Grow the crop they ask for and you get a large tip on top
+of the usual sale.
+
+![A customer placing an order](screenshots/customer.png)
+
+The seed shop. Every crop shows its grow time, price and payout, and the tick marks
+whichever one the current customer wants.
+
+![The seed shop](screenshots/shop.png)
+
+The fishing minigame. Keep the rod over the fish to fill the meter on the right.
+
+![The fishing minigame](screenshots/fishing.png)
+
 ## About the art
 
 All of the sprites were made in **Pixies**, a pixel art engine and editor I built
