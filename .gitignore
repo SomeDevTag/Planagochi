@@ -1,0 +1,7 @@
+# Compiled output
+bin/
+*.class
+
+# Local save data, each player generates their own
+SaveProg.ronasave
+*.ronasave.bak
