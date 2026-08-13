@@ -609,9 +609,11 @@ public class GamePage extends JPanel implements ActionListener, MouseListener, M
 
 	/** Screen 9: the walk-around room. */
 	private void paintRoom(Graphics2D g2D) {
-		renderIcon(g2D, screenX - 10 + 560, 50, 3, buttonYellowDark, 5);
-		renderIcon(g2D, screenX - 10 + 560, 210, 3, buttonGreenDark, 5);
-		renderIcon(g2D, screenX - 10 + 660, 130, 3, buttonRedDark, 5);
+		if (canOpen(nearbyTile)) { // the tick only shows when there is something to open
+			renderIcon(g2D, screenX - 10 + 560, 50, 3, buttonYellowDark, 5);
+			renderIcon(g2D, screenX - 10 + 560, 210, 3, buttonGreenDark, 5);
+			renderIcon(g2D, screenX - 10 + 660, 130, 3, buttonRedDark, 5);
+		}
 
 		drawRoomGrid(g2D, true);
 
@@ -840,9 +842,14 @@ public class GamePage extends JPanel implements ActionListener, MouseListener, M
 		System.out.print("Set Furniture.\n");
 	}
 
-	/** True for tiles interactWithNearby() can actually open - walls and decor are not. */
+	/** True for tiles worth describing in the speech box - walls and decor are not. */
 	private boolean isInteractive(int tile) {
 		return tile == 2 || tile == 3 || tile == 5 || (tile >= 9 && tile <= 12);
+	}
+
+	/** True for tiles interactWithNearby() opens a screen for. The customer is not one. */
+	private boolean canOpen(int tile) {
+		return isInteractive(tile) && tile != 5;
 	}
 
 	/** Records what the player is standing next to, checking all four neighbours. */
